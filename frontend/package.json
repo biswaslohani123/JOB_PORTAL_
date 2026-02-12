@@ -12,6 +12,8 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.60.0",
     "@tailwindcss/vite": "^4.1.18",
+    "framer-motion": "^12.34.0",
+    "motion": "^12.34.0",
     "quill": "^2.0.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
