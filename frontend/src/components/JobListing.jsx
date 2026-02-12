@@ -10,6 +10,8 @@ const JobListing = () => {
 
     const [showFilter, setShowFilter] = useState(false)
 
+    const [currentPage, setCurrentPage] = useState(1)
+
     
 
   return (
@@ -88,12 +90,39 @@ const JobListing = () => {
         <p className='mb-8'>Get your desired job from the top companies.</p>
         <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4'>
            {
-            jobs.map((job, index) => (
+            jobs.slice((currentPage-1)*6, currentPage*6).map((job, index) => (
                 <JobCard key={index} job={job}/>
             ))
            }
         </div>
+     {/* Pagination Section */}
+        
+    {jobs.length > 0  && (
+        <div className='flex items-center justify-center space-x-2 mt-10'>
+            <a href="">
+                <img onClick={() => setCurrentPage(Math.max(currentPage -1), 1)} src={assets.left_arrow_icon} alt="" />
+            </a>
+            {
+                Array.from({length:Math.ceil(jobs.length/6)}).map((_, idx) => (
+
+                    <a href="#job-list">
+                        <button onClick={() => setCurrentPage(idx+1)} className={`w-10 cursor-pointer h-10 flex items-center justify-center border border-gray-300 rounded ${currentPage === idx + 1 ? 'bg-blue-100 text-blue-500': 'text-gray-500'}`}>{idx + 1}</button>
+                    </a>
+
+                ) )
+            }
+
+            <a href="#job-list">
+                <img onClick={() => setCurrentPage(Math.min(currentPage +1, Math.ceil(jobs.length/6)))} src={assets.right_arrow_icon} alt="" />
+            </a>
+        </div>
+    )}
+
      </section>
+
+
+        
+
 
     </div>
   )
