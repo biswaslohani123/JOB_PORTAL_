@@ -143,7 +143,7 @@ const JobListing = () => {
             {
                 Array.from({length:Math.ceil(filteredJobData.length/6)}).map((_, idx) => (
 
-                    <a href="#job-list">
+                    <a key={idx} href="#job-list">
                         <button onClick={() => setCurrentPage(idx+1)} className={`w-10 cursor-pointer h-10 flex items-center justify-center border border-gray-300 rounded ${currentPage === idx + 1 ? 'bg-blue-100 text-blue-500': 'text-gray-500'}`}>{idx + 1}</button>
                     </a>
 
