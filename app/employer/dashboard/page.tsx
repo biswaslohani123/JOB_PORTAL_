@@ -316,9 +316,9 @@ export default function page() {
 
                                     <div className="flex gap-3 border-t pt-4">
 
-                                        <Link href={`/jobs/${job._id}`}>
+                                        <Link href={`/employer/jobs/${job._id}/applicants`}>
                                             <Button variant='outline'>
-                                                View
+                                                View Applicant
                                             </Button>
                                         </Link>
 
