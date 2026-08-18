@@ -66,7 +66,7 @@ export default function NavBar() {
               )}
 
               {user.role === "employer" && (
-                <Link href="/employer/jobs">
+                <Link href="/employer/dashboard">
                   <Button variant="ghost">My Jobs</Button>
                 </Link>
               )}

@@ -189,6 +189,16 @@ export default function page() {
                             </Badge>
                         </div>
 
+                        <div className="flex gap-2">
+                            {
+                                job.skills.map((skill) => (
+
+                                    <Badge  key={skill} >
+                                        {skill}
+                                    </Badge>
+                                ))
+                            }
+                        </div>
                     </div>
 
                 </CardContent>
